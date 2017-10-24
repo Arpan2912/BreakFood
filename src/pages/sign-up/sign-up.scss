@@ -4,43 +4,54 @@ page-sign-up {
 .font-color{
     color:white
 }
-.title{
-    width:auto;
-    margin-top:20px;
-    //margin-left:90px; 
-    margin-left: 30%;
-    font-size: 30px;
-    color:white;
-}
-.login-content{
-    padding-top: 20px;
-    padding-left: 40px;   
-    font-size: 20px
+
+p.align{
+    text-align: center;
 }
 
-.button-color{
-    margin-left: 40%;
-    margin-top: 20px;
+.button-color{ 
+    margin-top: 30px;
     color:#dfa911;
-}
-.warning-button{
-    margin-top:10px;
-    background-color: #dfa911;
-}
-.warning-button-color{
-    color:#dfa911;
-}
-.item{
-    background-color: #dfa911;
-    min-height: 20px;
+    width:100%;
+    background-color: white;
+    border: 0px solid #dfa911;
+    height: 40px;
 }
 .input{
-    width:60%;
-    margin: 0px 0px 0px 0px;
+    width:100%;
+    font-size: 20px;
+    font-family:  'Calibri';
+    margin: 10px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-    height: 20px;
+    height: 50px;
+    background-color: #dfa911;
+    color: white;
+    border-bottom : 2px solid white;
+    border-top : 0px solid white;
+    border-right : 0px solid white;
+    border-left : 0px solid white;
 }
-.label{
-    margin: 20px 0px 0px 0px;
-    padding: 0px 0px 0px 10px;
+
+
+input::-webkit-input-placeholder {
+    color: #C29009;
+    }
+
+div .signup{
+    margin-top: 10px;
+    padding: 30px;
+    height: auto;
+    width:auto;
+    border:2px solid #886507;
 }
+.login-btn{
+    
+    align-content: center;
+    width:30%;
+    margin-top: 0px;
+    color:#dfa911;
+    background-color: white;
+    border: 0px solid #dfa911;
+    height: 30px;
+}
+

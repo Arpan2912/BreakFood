@@ -6,8 +6,9 @@
 -->
 <ion-content style='background-color:#dfa911' padding>
   <ion-label class="title">Break Food</ion-label>
-  <form>
-    <ion-list>
+  <div class="signup">
+  <form (ngSubmit)="signUp()">
+    <!-- <ion-list>
       <ion-label class="font-color">User Name</ion-label>
       <ion-item>
         <ion-input></ion-input>
@@ -37,6 +38,24 @@
             Login
           </button>
       </ion-item>
-    </ion-list>
+    </ion-list> -->
+  <input class="input" type="text" name="username" [(ngModel)]="form_data.username" placeholder="User Name"><br>
+  <input class="input" type="text" name="email" [(ngModel)]="form_data.email" placeholder="Email Address"><br>
+  <input class="input" type="text" name="mobile" [(ngModel)]="form_data.mobile" placeholder="Mobile No."><br>
+  <input class="input" type="password" name="password"[(ngModel)]="form_data.password" placeholder="Password"><br>
+  
+  <input class="input" type="password" placeholder="Verify Password"><br>
+  
+  <input type="submit" value="SignUp" class="button-color button"><br>
+
   </form>
+</div>
+<div>
+  <p class="align font-color ">Already a member ?</p>
+  <form >
+    <p class="align">
+    <input  type="submit" value="Login" (click)="goToLoginPage()" class="login-btn button"><br>
+    <p>
+  </form>
+</div>
 </ion-content>

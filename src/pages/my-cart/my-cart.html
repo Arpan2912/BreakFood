@@ -17,5 +17,22 @@
 
 
 <ion-content padding>
-
+  <div>
+    <p class="sub-total">Sub Total : {{sub_total}}</p>
+  </div>
+  <div class="main">
+    <div class="div-img"><img src={{item_detail.img}}></div>
+    <div class="div-content">
+      <p >{{item_detail.name}}</p>
+      <p>{{item_detail.weight}}</p>
+      <p class="item_detail">{{item_detail.price}}</p>
+    </div>
+    <div class="div-qty">
+      <form>
+        <button class="count" (click)=addToCart(-1)>-</button>
+        <input type="text" value="0" name="qty" [(ngModel)]="qty" readonly>
+        <button class="count" (click)=addToCart(+1)>+</button>
+      </form>
+    </div>
+  </div>
 </ion-content>

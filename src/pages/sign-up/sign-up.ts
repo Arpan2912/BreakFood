@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Nav, Platform } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the SignUpPage page.
@@ -14,9 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'sign-up.html',
 })
 export class SignUpPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  form_data ={};
+  constructor(public navCtrl: NavController, public navParams: NavParams,private nav:Nav) {
   }
+  signUp(){
+    console.log(this.form_data);
+    this.form_data['username']=this.form_data['username']+" arpan";
+    console.log("sign up success");
+  }
+
+  goToLoginPage(){
+    this.nav.setRoot(LoginPage);
+   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignUpPage');

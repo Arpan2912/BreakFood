@@ -20,7 +20,7 @@ export class MyApp {
 
   //rootPage: any = HomePage;
   //rootPage: any = LoginPage;
-  rootPage: any = SignUpPage;
+  rootPage: any = LoginPage;
   
   pages: Array<{title: string, component: any}>;
 

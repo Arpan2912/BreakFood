@@ -8,11 +8,21 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <div class="main">
+    <div class="div-img"><img src={{item_detail.img}}></div>
+    <div class="div-content">
+      <p >{{item_detail.name}}</p>
+      <p>{{item_detail.weight}}</p>
+      <p class="item_detail">{{item_detail.price}}</p>
+    </div>
+    <div class="div-qty">
+      <form>
+        <button class="count" (click)=addToCart(-1)>-</button>
+        <input type="text" value="0" name="qty" [(ngModel)]="qty" readonly>
+        <button class="count" (click)=addToCart(+1)>+</button>
+      </form>
+    </div>
+  </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>

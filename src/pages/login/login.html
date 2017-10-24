@@ -15,51 +15,21 @@
 <ion-content style='background-color:#dfa911' padding>
 
   <ion-label class="title">Break Food</ion-label>
-  <form>
-    <ion-list>
-      <ion-label class="font-color">User Name</ion-label>
-      <ion-item>
-        <ion-input></ion-input>
-      </ion-item>
-      <ion-label class="font-color">Password</ion-label>
-      <ion-item>
-        <ion-input></ion-input>
-      </ion-item>
-      <button ion-button color="white" class="button-color">
-        Login
-      </button>
-      <ion-item class="warning-button">
-        <ion-label class="font-color">Not a Member?</ion-label>
-        <button ion-button item-right color="white" class="warning-button-color">
-          SignUp
-        </button>
-      </ion-item>
-    </ion-list>
-  </form>
-  <!-- <form novalidate class="no-top-padding" #registrationForm="ngForm" [hidden]='segment !="registration"'>
-    <ion-list>
-      <ion-label class="form-label">Email</ion-label>
-      <ion-item>
-        <ion-icon class="form-icon" name="contact" item-left></ion-icon>
-        <ion-input placeholder="Business Email Address" clearInput type="email" spellcheck="false" autocapitalize="off" required
-          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
-        </ion-input>
-      </ion-item>
-      <!-- <p [hidden]="email.valid || email.untouched" *ngIf="email.errors && email.errors.required" class="error-padding-left" text-left
-        no-margin danger>Email is required</p>
-      <p [hidden]="email.valid || email.untouched" *ngIf="email.errors && email.errors.pattern" class="error-padding-left" text-left
-        no-margin danger>Email is invalid</p>
-      <p *ngIf="duplicateUser" class="warning error-padding-left" danger>
-        This email has already been used.
-      </p> 
-    </ion-list>
-    <ion-row responsive-sm>
-      <ion-col text-center no-padding>
-        <div>
-          <button type="submit" large block [disabled]="!registrationForm.form.valid" (click)="register(registrationData)"> Next > </button>
-        </div>
-      </ion-col>
-    </ion-row>
-  </form>-->
+  <div class="login">
+      <form (ngSubmit)="login()">
+        
+      <input class="input" type="text" name="email" [(ngModel)]="form_data.email" placeholder="Email Address"><br>
+      <input class="input" type="password" name="password"[(ngModel)]="form_data.password" placeholder="Password"><br>
+      <input type="submit" value="Login" class="button-color button"><br>
+    
+      </form>
+  </div>  
+  <div>
+      <p class="font-color" >Not a member ?</p>
+      <form >
+        <p>
+        <input  type="submit" value="Sign Up" (click)="goToSignUpPage()" class="signup-btn button"><br>
+        <p>
+      </form>
+    </div>
 </ion-content>
-<div class="login-box">
