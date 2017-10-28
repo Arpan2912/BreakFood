@@ -22,7 +22,7 @@ page-my-cart {
     color:#dfa911;
 }
 .border{
-    border:1px solid #E0E0E0;
+    border-bottom:1px solid #E0E0E0;
 }
 .input{
     width: 100%;
@@ -30,20 +30,19 @@ page-my-cart {
 .input-qty{
     //width:50%;
    // height:50%;
-    min-width: 20%;
-    min-height: 20%;
-    //font-size: %;
+  //  min-width: 20%;
+   // min-height: 20%;
+    font-size:110%;
     box-sizing: border-box; 
     text-align: center;
-    border: 1px solid black;
+    //border: 1px solid #dfa911;
     padding: 0 px;
     margin: 0px;
-    $text-input-md-margin-start:0px;
-
+    border-radius: 50%;
 }
 .add-button{
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
 }
 
 .text-input-md{

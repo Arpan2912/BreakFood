@@ -8,23 +8,60 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="main" *ngFor="let item_detail of item_details; let i = index">
+  <ion-grid>
+    <ion-row class="border" *ngFor="let item_detail of item_details;let i = index">
+      <ion-col col-2>
+        <img src="{{item_detail.img}}">
+      </ion-col>
+      <ion-col col-6>
+        <ion-row>
+          <ion-col class="text-color">{{item_detail.name}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="text-color">{{item_detail.weight}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="text-color">{{item_detail.price}}</ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-4>
+        <ion-row>
+          <!-- <ion-col col-4> -->
+          <button ion-button col-3 class="button-md add-button" (click)="addToCart(-1,i)">-</button>
+          <!-- </ion-col> -->
+          <ion-col col-4 class="input-qty">
+            {{item_detail.qty}}
+            <!-- <ion-input   type="text" class="input-qty" [(ngModel)]="qty"></ion-input> -->
+          </ion-col>
+          <!-- <ion-col col-4> -->
+          <button ion-button col-3 button-md class="add-button" (click)="addToCart(+1,i)">+</button>
+          <!-- </ion-col> -->
+          <ion-col>
+
+          </ion-col>
+        </ion-row>
+        <ion-row>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <!-- <div class="main" *ngFor="let item_detail of item_details; let i = index">
     <!-- <div class="main"> -->
-      <div class="div-img"><img src={{item_detail.img}}></div>
+  <!-- <div class="div-img"><img src={{item_detail.img}}></div>
       <div class="div-content">
         <p class="item_detail">{{item_detail.name}}</p>
         <p class="item_detail">{{item_detail.weight}}</p>
         <p class="item_detail">{{item_detail.price}}</p>
-      </div>
-      <div class="div-qty">
+      </div> -->
+  <!-- <div class="div-qty">
         <form>
           <button class="count" (click)=addToCart(-1,i)>-</button>
           <input class="quantity" type="text" value="0" name="qty" [(ngModel)]="item_detail.qty" readonly>
           <button class="count" (click)=addToCart(+1,i)>+</button>
         </form>
         <p>{{item_detail.total}}</p>
-      </div>
-    <!-- </div> -->
-  </div>
+      </div> -->
+  <!-- </div> -->
+  <!-- </div> -->
 </ion-content>
-

@@ -14,25 +14,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'my-cart.html',
 })
 export class MyCartPage {
-sub_total = 0;
-qty = 0;
-item_detail={
-  name:'Potato Wafer',
-  weight :'500g',
-  price :'50',
-  img :'../assets/icon/PotatoChips.jpg'
-};
+  sub_total = 0;
+  //qty = 0;
+  item_details = [{
+    name: 'Potato Wafer',
+    weight: '500g',
+    price: '50',
+    img: '../assets/icon/PotatoChips.jpg',
+    qty:0,
+    total:0
+    },
+  {
+    name: 'Potato Wafer',
+    weight: '500g',
+    price: '50',
+    img: '../assets/icon/PotatoChips.jpg',
+    qty:0,
+    total:0
+  }];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  addToCart(q){
-    if((this.qty >= 0 && q == 1)||(this.qty>0 && q == -1))
-      this.qty = this.qty + q;
+  addToCart(q, index) {
+    console.log('index', index);
+    if ((this.item_details[index]['qty'] >= 0 && q == 1) || (this.item_details[index]['qty'] > 0 && q == -1)) {
+    this.item_details[index]['qty'] = this.item_details[index]['qty'] + q;
+      this.item_details[index]['total'] += (this.item_details[index]['price'] * q);
+      
+    }
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyCartPage');
   }
 
-  static demoMethod(){
+  static demoMethod() {
     console.log("its working");
   }
 
