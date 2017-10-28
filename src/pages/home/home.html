@@ -8,21 +8,23 @@
 </ion-header>
 
 <ion-content padding>
-
-  <div class="main">
-    <div class="div-img"><img src={{item_detail.img}}></div>
-    <div class="div-content">
-      <p >{{item_detail.name}}</p>
-      <p>{{item_detail.weight}}</p>
-      <p class="item_detail">{{item_detail.price}}</p>
-    </div>
-    <div class="div-qty">
-      <form>
-        <button class="count" (click)=addToCart(-1)>-</button>
-        <input type="text" value="0" name="qty" [(ngModel)]="qty" readonly>
-        <button class="count" (click)=addToCart(+1)>+</button>
-      </form>
-    </div>
+  <div class="main" *ngFor="let item_detail of item_details; let i = index">
+    <!-- <div class="main"> -->
+      <div class="div-img"><img src={{item_detail.img}}></div>
+      <div class="div-content">
+        <p class="item_detail">{{item_detail.name}}</p>
+        <p class="item_detail">{{item_detail.weight}}</p>
+        <p class="item_detail">{{item_detail.price}}</p>
+      </div>
+      <div class="div-qty">
+        <form>
+          <button class="count" (click)=addToCart(-1,i)>-</button>
+          <input class="quantity" type="text" value="0" name="qty" [(ngModel)]="item_detail.qty" readonly>
+          <button class="count" (click)=addToCart(+1,i)>+</button>
+        </form>
+        <p>{{item_detail.total}}</p>
+      </div>
+    <!-- </div> -->
   </div>
-
 </ion-content>
+

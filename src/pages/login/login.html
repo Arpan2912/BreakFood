@@ -18,16 +18,16 @@
   <div class="login">
       <form (ngSubmit)="login()">
         
-      <input class="input" type="text" name="email" [(ngModel)]="form_data.email" placeholder="Email Address"><br>
-      <input class="input" type="password" name="password"[(ngModel)]="form_data.password" placeholder="Password"><br>
+      <input class="form-data" type="text" name="email" [(ngModel)]="form_data.email" placeholder="Email Address"><br>
+      <input class="form-data" type="password" name="password"[(ngModel)]="form_data.password" placeholder="Password"><br>
       <input type="submit" value="Login" class="button-color button"><br>
     
       </form>
   </div>  
   <div>
-      <p class="font-color" >Not a member ?</p>
+      <p class="font-color align" >Not a member ?</p>
       <form >
-        <p>
+        <p class="align">
         <input  type="submit" value="Sign Up" (click)="goToSignUpPage()" class="signup-btn button"><br>
         <p>
       </form>

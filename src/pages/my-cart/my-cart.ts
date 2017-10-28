@@ -32,4 +32,8 @@ item_detail={
     console.log('ionViewDidLoad MyCartPage');
   }
 
+  static demoMethod(){
+    console.log("its working");
+  }
+
 }

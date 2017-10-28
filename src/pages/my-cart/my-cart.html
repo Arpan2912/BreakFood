@@ -20,7 +20,8 @@
   <div>
     <p class="sub-total">Sub Total : {{sub_total}}</p>
   </div>
-  <div class="main">
+   
+  <!-- <div class="main">
     <div class="div-img"><img src={{item_detail.img}}></div>
     <div class="div-content">
       <p >{{item_detail.name}}</p>
@@ -34,5 +35,39 @@
         <button class="count" (click)=addToCart(+1)>+</button>
       </form>
     </div>
-  </div>
+  </div> -->
+  <ion-grid>
+    <ion-row class="border">
+      <ion-col col-2>
+        <img src="{{item_detail.img}}">
+      </ion-col>
+      <ion-col col-7>
+        <ion-row>
+          <ion-col class="text-color">{{item_detail.name}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="text-color">{{item_detail.weight}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="text-color">{{item_detail.price}}</ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-3>
+        <ion-row>
+          <!-- <ion-col col-4> -->
+            <button ion-button col-3 class="button-md add-button" (click)="addToCart(-1)">-</button>
+          <!-- </ion-col> -->
+          <!-- <ion-col col-4> -->
+              <ion-input col-4 no-padding type="text" class="input-qty" [(ngModel)]="qty"></ion-input>
+          <!-- </ion-col> -->
+          <!-- <ion-col col-4> -->
+              <button ion-button col-3 button-md class="add-button" (click)="addToCart(+1)">+</button>
+            <!-- </ion-col> -->
+          <ion-col>
+
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
